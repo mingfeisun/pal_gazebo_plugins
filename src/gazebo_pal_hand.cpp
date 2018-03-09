@@ -156,19 +156,19 @@ namespace gazebo {
     if( actuator_angle > lower_limit)
     {
       math::Angle index_1_angle = ( actuator_angle/2.5 > joints[1]->GetUpperLimit(0u) ) ? joints[1]->GetUpperLimit(0u) : actuator_angle/2.5;
-      joints[1]->SetAngle(0u, index_1_angle);
+      joints[1]->SetParam("angle", 0u, index_1_angle);
 
       math::Angle index_2_angle = ( actuator_angle/3.2 > joints[2]->GetUpperLimit(0u) ) ? joints[2]->GetUpperLimit(0u) : actuator_angle/3.2;
-      joints[2]->SetAngle(0u, index_2_angle);
+      joints[2]->SetParam("angle", 0u, index_2_angle);
 
       math::Angle index_3_angle = ( actuator_angle/3.2 > joints[3]->GetUpperLimit(0u) ) ? joints[3]->GetUpperLimit(0u) : actuator_angle/3.2;
-      joints[3]->SetAngle(0u, index_3_angle);
+      joints[3]->SetParam("angle", 0u, index_3_angle);
     }
     else
     {
-      joints[1]->SetAngle(0u, lower_limit);
-      joints[2]->SetAngle(0u, lower_limit);
-      joints[3]->SetAngle(0u, lower_limit);
+      joints[1]->SetParam("angle", 0u, lower_limit);
+      joints[2]->SetParam("angle", 0u, lower_limit);
+      joints[3]->SetParam("angle", 0u, lower_limit);
     }
   }
 
